@@ -1,0 +1,69 @@
+@import './theme-variables';
+@import './fonts';
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+@media screen and (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+body {
+    font-family: 'Open Sans'
+}
+
+
+/* Basic Struture */
+
+
+#site-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+main {
+    flex: 1;
+    height: auto;
+}
+
+header {
+    color: var(--white);
+    padding: 2rem;
+    background-color: var(--primary);
+}
+
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    color: var(--white);
+    background-color: var(--secondary);
+    font-size: 0.875rem;
+
+    a {
+        color: var(--light);
+    }
+}
+
+.container {
+   
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media screen and (min-width: 80rem) {
+        max-width: 80rem;
+    }
+
+    @media screen and (min-width: 96rem) {
+        max-width:96rem;
+    }
+}
