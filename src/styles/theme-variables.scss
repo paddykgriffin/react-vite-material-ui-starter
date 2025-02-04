@@ -2,18 +2,20 @@
 
     --bg-color: #ffffff;
     --text-color: #000000;
- 
 
     // Colours
-    --primary: #4287f5;
-    --secondary: #3e4045;
-    --gray: #cccccc;
+    --grey: ##bdbdbd;
     --light-blue: #add8e6;
-    --white: #ffffff;
+    --dark: #121212;
+    --light: #ffffff;
 
     // Globals
     --font-color: var(--dark);
-    --link-color: var(--white);
+    --link-color: var(--grey);
+
+    --theme-primary-color: #ff0000;
+    --theme-secondary-color: #ff0022;
+    --theme-background-paper: #ffffff;
 
 
     // Font Sizes
@@ -24,35 +26,11 @@
     --heading-h5: 2.25rem;
     --heading-h6: 1.5rem;
 
-}
 
+    $theme-primary: var(--theme-primary-color);
+    $theme-secondary: var(--theme-secondary-color);
+    $theme-background: var(--theme-background-paper);
 
-h1 {
-    font-weight: 700;
-    font-size: var(--heading-h1);
-}
+    --Paper-overlay: none;
 
-h2 {
-    font-weight: 600;
-    font-size: var(--heading-h2);
-}
-
-h3 {
-    font-weight: 500;
-    font-size: var(--heading-h3);
-}
-
-h4 {
-    font-weight: 500;
-    font-size: var(--heading-h4);
-}
-
-p {
-    margin: 0;
-    padding-bottom: 16px;
-    line-height: 1.5;
-}
-
-a {
-    color: var(--link-color);
 }

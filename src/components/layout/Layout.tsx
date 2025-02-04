@@ -1,15 +1,18 @@
 import Footer from '@/components/layout/Footer';
-import Header from '@/components/layout/Header';
+import Header from '@/components/layout/Header/Header';
 import { useEffect } from 'react';
 import type React from 'react';
+import { HeaderProvider } from './Header/HeaderContext';
+import siteConfig from '@/site-config';
 
 interface LayoutProps {
   children: React.ReactNode;
   emptyPage?: boolean;
   pageTitle?: string;
+  disableTransparentHeader?: boolean;
 }
 
-const Layout = ({ pageTitle, emptyPage, children }: LayoutProps) => {
+const Layout = ({ pageTitle, children, disableTransparentHeader }: LayoutProps) => {
   useEffect(() => {
     if (import.meta.env.REACT_APP_PROJECT_NAME) {
       document.title = `${pageTitle} | ${import.meta.env.REACT_APP_PROJECT_NAME}`;
@@ -18,17 +21,25 @@ const Layout = ({ pageTitle, emptyPage, children }: LayoutProps) => {
     }
   }, [pageTitle]);
 
+  useEffect(() => {
+    if (!siteConfig.layout.header.transparent || disableTransparentHeader) {
+      setTimeout(() => {
+        const header = document.getElementById('main-header');
+        const siteMain = document.getElementById('site-main');
+        if (header && siteMain) {
+          siteMain.style.marginTop = `${header.offsetHeight}px`;
+        }
+      }, 50);
+    }
+  }, [disableTransparentHeader]);
+
   return (
     <>
-      {emptyPage ? (
-        children
-      ) : (
-        <div id="site-wrapper">
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </div>
-      )}
+      <HeaderProvider>
+        <Header />
+      </HeaderProvider>
+      <main>{children}</main>
+      <Footer />
     </>
   );
 };
