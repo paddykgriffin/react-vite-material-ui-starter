@@ -1,6 +1,6 @@
 # React Vite Material UI 
 
-WIP
+This project is built with React, Vite (for bundling) and Material UI. React Router is used for routing.
 
 ## Getting started
 
@@ -29,6 +29,15 @@ WIP
 - Typescript
 - eslint
 - Prettier
+- Material UI
 
 ### Notes
+
+A couple of basic comoponents have been prebuilt to the template up and running these are:
+
+- Header
+- Footer
+- Navigations
+- Hero
+- Logo
 

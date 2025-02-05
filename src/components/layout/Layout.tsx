@@ -2,7 +2,7 @@ import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header/Header';
 import { useEffect } from 'react';
 import type React from 'react';
-import { HeaderProvider } from './Header/HeaderContext';
+import { HeaderProvider } from '@/components/layout/Header/HeaderContext';
 import siteConfig from '@/site-config';
 
 interface LayoutProps {
@@ -34,13 +34,13 @@ const Layout = ({ pageTitle, children, disableTransparentHeader }: LayoutProps) 
   }, [disableTransparentHeader]);
 
   return (
-    <>
+    <div id="site-wrapper">
       <HeaderProvider>
         <Header />
       </HeaderProvider>
       <main>{children}</main>
       <Footer />
-    </>
+    </div>
   );
 };
 

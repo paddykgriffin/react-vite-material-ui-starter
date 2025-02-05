@@ -5,7 +5,6 @@ export type SiteMode = {
 
 export type SiteConfig = {
   siteName: string;
-  siteDesc: string;
   darkMode: boolean;
   theme: {
     color: {
@@ -18,6 +17,7 @@ export type SiteConfig = {
       transparent: boolean;
       hideOnScroll: boolean;
       mainNav: boolean;
+      sidebarNav: boolean;
     }
   }
 };

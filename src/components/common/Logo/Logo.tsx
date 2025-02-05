@@ -1,7 +1,15 @@
-import { useDarkMode } from '@/hooks/useDarkMode';
-import { s3 } from '@/utils/s3';
+import useCurrentTheme from '@/hooks/useCurrentTheme';
+import Logo from '@/assets/images/Logo.svg';
+import LogoDark from '@/assets/images/LogoDark.svg';
+import { NavLink } from 'react-router-dom';
 
-export default function Logo() {
-  const { isDarkMode } = useDarkMode();
-  return <a href="/">{isDarkMode ? <img src={s3('Logo.svg')} /> : <img src={s3('Logo.svg')} />}</a>;
+export default function SiteLogo() {
+  const { currentTheme } = useCurrentTheme();
+  const LogoToRender = currentTheme === 'dark' ? LogoDark : Logo;
+
+  return (
+    <NavLink to="/">
+      <img src={LogoToRender} />
+    </NavLink>
+  );
 }

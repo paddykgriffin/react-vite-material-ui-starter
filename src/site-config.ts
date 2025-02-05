@@ -2,21 +2,27 @@ import { SiteConfig } from './types/site-config-types';
 
 const siteConfig: SiteConfig = {
   siteName: 'Site Boilerplate',
-  siteDesc: 'The advantage of hiring a workspace with us is that givees you comfortable service and all-around facilities.',
- 
-  darkMode: false,
+  darkMode: true,
   theme: {
     color: {
       primary: {
-        light: '#ff0000',
-        dark: '#000000',
+        light: '#32a852',
+        dark: '#f54251',
       },
       secondary: {
-        light: '#ff0000',
+        light: '#D8D8D8',
         dark: '#000000',
       },
     },
   },
+  layout: {
+    header: {
+      transparent: true,
+      hideOnScroll: false,
+      mainNav: true,
+      sidebarNav: true
+    }
+  }
 };
 
 export default siteConfig;

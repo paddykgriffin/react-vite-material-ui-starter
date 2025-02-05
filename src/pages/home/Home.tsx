@@ -1,25 +1,34 @@
-import Heading from '../../components/typography/Heading';
-import HeadingH2 from '../..//components/typography/HeadingH2';
-import HeadingH3 from '../../components/typography/HeadingH3';
-import HeadingH4 from '../../components/typography/HeadingH4';
-import Paragraph from '../../components/typography/Paragraph';
 import Layout from '../../components/layout/Layout';
-import Container from '../../components/layout/Container';
+import { Box, Container, Typography } from '@mui/material';
+import { Hero, Background, Content, Title, SubTitle, ScrollIcon } from '@/components/common/Hero/Hero';
 
 const Home = () => {
   return (
     <Layout pageTitle="Home">
-      <Container>
-        <Heading title="Heading h1" />
-        <HeadingH2 title="Heading h2" />
-        <HeadingH3 title="Heading h3" />
-        <HeadingH4 title="Heading h4" />
-        <Paragraph
-          text="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus qui fugit molestias nulla voluptatum repellat hic
-      repellendus id quae alias minima praesentium, non provident exercitationem pariatur mollitia, ratione impedit
-      tempora quibusdam reprehenderit eveniet, iste dolorem! Neque accusamus repudiandae fugiat beatae."
-        />
-      </Container>
+      <Hero>
+        <Background type="img" src="https://picsum.photos/id/1/1920/600" srcMobile="/images/hero-mobile.png" />
+        <Content className="items-center text-center">
+          <Title className="leading-18 m-5  text-white">Main Tagline</Title>
+          <SubTitle className="m-5 text-white max-w-[900px] mx-auto">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam molestiae laborum eum minima itaque
+            praesentium.
+          </SubTitle>
+        </Content>
+        <ScrollIcon align="center" />
+      </Hero>
+      <Box component={'section'} sx={{ py: 10 }}>
+        <Container maxWidth="xl">
+          <Typography variant="h1">Heading h1</Typography>
+          <Typography variant="h2">Heading h2</Typography>
+          <Typography variant="h3">Heading h3</Typography>
+          <Typography variant="h4">Heading h4</Typography>
+          <Typography variant="body1">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sed iusto exercitationem impedit saepe fugit
+            error quaerat incidunt consequatur? Vero, id aliquam. Dolores consequuntur eligendi inventore quidem itaque
+            corrupti perspiciatis?
+          </Typography>
+        </Container>
+      </Box>
     </Layout>
   );
 };

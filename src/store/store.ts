@@ -1,5 +1,3 @@
-"use client";
-
 import {configureStore} from '@reduxjs/toolkit';
 import {FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE, persistReducer} from 'redux-persist';
 import storage from 'redux-persist/lib/storage';

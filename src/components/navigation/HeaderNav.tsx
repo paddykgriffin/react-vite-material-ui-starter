@@ -1,13 +1,18 @@
-import React from 'react';
-import { HeaderMenuLinks } from '../navigation/HeaderMenuLinks';
+import { HeaderMenuLinks } from '@/components/navigation/HeaderMenuLinks';
+import { Box } from '@mui/material';
 
 const HeaderNav = () => {
   return (
-    <div
-      style={{
+    <Box
+      className="header-nav"
+      sx={{
         display: 'flex',
         gap: '16px',
-        marginRight: '2rem'
+        marginRight: '2rem',
+        '& a': {
+          color: 'white',
+          fontWeight: 500,
+        },
       }}
     >
       {HeaderMenuLinks.map(item => (
@@ -21,7 +26,7 @@ const HeaderNav = () => {
           {item.title}
         </a>
       ))}
-    </div>
+    </Box>
   );
 };
 
